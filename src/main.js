@@ -26,14 +26,18 @@ let config = {
             gravity: {x: 0, y: 0}
         }
     },
-    scene: [ Menu, Play ] 
+    scene: [ Load, Menu, Play ] 
 };
 
 let game = new Phaser.Game(config);
 
 // reserve keyboard vars
-let keyF, keyR, keyLEFT, keyRIGHT;
+let keySPACE;
 
 //set UI sizes
 let borderUISize = game.config.height / 15;
 let borderPadding = borderUISize / 3;
+
+let {width, height} = game.config;
+
+let eventEmitter = new Phaser.Events.EventEmitter();
