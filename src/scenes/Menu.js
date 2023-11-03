@@ -17,15 +17,19 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
         };
 
-        this.add.text(game.config.width/2,game.config.height/2+borderUISize +
-        borderPadding, 'Press SPACE to Begin', menuConfig).setOrigin(0.5);
-
         this.scene.launch('playScene'); // Start play scene to overlap the menu
+
+        this.add.text(game.config.width/2,game.config.height/2,
+        'Press SPACE to Begin', menuConfig).setOrigin(0.5);
+
+        keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
     }
 
     update() {
-        if (Phaser.Input.Keyboard.JustDown(keySPACE)) {
+        if (keySPACE.isDown) {
             this.scene.sleep('menuScene');
+            eventEmitter.emit('startGame');
         }
     }
 }
