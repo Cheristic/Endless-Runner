@@ -7,15 +7,20 @@ let config = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: {x: 0, y: 0}
+            gravity: {x: 0, y: 0},
+            debug: true
         }
     },
-    scene: [ Load, Menu, Play ] 
+    scene: [ Load, Menu, Play, GameOver ] 
 };
 
 let game = new Phaser.Game(config);
 
 let keySPACE;
+
+let gameActive = false;
+
+let rotationSpeed;
 //set UI sizes
 let borderUISize = game.config.height / 15;
 let borderPadding = borderUISize / 3;

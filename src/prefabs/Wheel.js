@@ -4,12 +4,11 @@ class Wheel extends Phaser.GameObjects.Sprite {
 
         // add object to existing scene
         scene.add.existing(this);
-        this.rotationSpeed = 0.5;
         this.angle = 0;
     }
 
     preUpdate() {
-        this.angle+=this.rotationSpeed;
+        this.angle+=rotationSpeed;
         this.setAngle(this.angle)
         if (this.angle == 180) this.angle = -180;
     }
