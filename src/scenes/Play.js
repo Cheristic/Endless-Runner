@@ -149,7 +149,7 @@ class Play extends Phaser.Scene {
     }
 
     increaseSpeed() {
-        if (rotationSpeed < 1.5) rotationSpeed+=0.05;
+        if (rotationSpeed < 1.8) rotationSpeed+=0.05;
         this.clock = this.time.delayedCall(this.speedUpTime, this.increaseSpeed, null, this);
     }
 }

@@ -12,8 +12,10 @@ class Wedge8 extends Wedge {
 
         this.add(new Platform(this.scene, -10, 140, -5));
         this.add(new Platform(this.scene, -29, 144, -15));
+        this.add(new Platform(this.scene, -48, 151, -25));
+        this.add(new Platform(this.scene, -65, 161, -35));
 
-        this.add(new Platform(this.scene, 58, 103, 15));
+        this.add(new Platform(this.scene, 50, 101, 15));
         this.add(new Platform(this.scene, 40, 100, 0));
 
         this.list.forEach(element => {
